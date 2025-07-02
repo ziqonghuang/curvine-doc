@@ -111,7 +111,7 @@ const config: Config = {
           position: 'right'
         },
         {
-          href: 'https://github.com/curvineio',
+          href: 'https://github.com/curvineio/curvine',
           label: 'GitHub',
           position: 'right',
         },
@@ -157,8 +157,7 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Curvine Project Authors.<br/>
-                  Open source under Apache License 20. Built with Docusaurus.<br/>
-                  <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备08130115号-97</a>`,
+                  Open source under Apache License 20. Built with Docusaurus.`
     },
     prism: {
       theme: prismThemes.github,
