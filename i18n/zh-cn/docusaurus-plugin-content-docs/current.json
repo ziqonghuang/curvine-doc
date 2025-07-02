@@ -1,0 +1,48 @@
+{
+  "version.label": {
+    "message": "Master 🚧",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
+    "message": "Tutorial - Extras",
+    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  },
+
+  "sidebar.tutorialSidebar.category.User Manuals": {
+    "message": "用户手册",
+    "description": "用户手册"
+  },
+
+  "sidebar.tutorialSidebar.category.Overview": {
+    "message": "概览",
+    "description": "概览"
+  },
+
+  "sidebar.tutorialSidebar.category.Deploy": {
+    "message": "部署",
+    "description": "部署"
+  },
+
+  "sidebar.tutorialSidebar.category.Benchmark": {
+    "message": "性能测试",
+    "description": "性能测试"
+  },
+
+  "sidebar.tutorialSidebar.category.Architecture": {
+    "message": "架构详情",
+    "description": "Curvine Architecture"
+  },
+
+  "sidebar.tutorialSidebar.category.Contributor Guide": {
+    "message": "开发者指南",
+    "description": "社区"
+  }
+}

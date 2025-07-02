@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "博客",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Curvine博客发布",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "近期活动",
+    "description": "The label for the left sidebar"
+  }
+}

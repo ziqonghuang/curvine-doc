@@ -1,0 +1,14 @@
+ai:
+  label: Hello
+  permalink: /ai
+  description: curvine in ai
+
+bigdata:
+  label: bigdata
+  permalink: /bigdata
+  description: curvine in bigdata
+
+teams:
+  label: teams
+  permalink: /teams
+  description: teams activities of curvine

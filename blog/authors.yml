@@ -1,0 +1,37 @@
+barry:
+  name: Barry
+  title: Senior Engineer
+  url: https://curvine.io
+  image_url: https://infmax.top/img/author.png
+  page: true
+  socials:
+    github: lzjqsdd
+
+david:
+  name: David
+  title: Founder of Curvine
+  url: https://curvine.io
+  #image_url: https://infmax.top/img/author.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-sebastien-lorber-articles'
+  socials:
+    github: szbr9486
+
+john:
+  name: John
+  title: Senior Engineer
+  url: https://curvine.io
+  #image_url: https://infmax.top/img/author.png
+  page: true
+  socials:
+    github: jhon
+
+xuen:
+  name: Xuen
+  title: Senior Engineer
+  url: https://curvine.io
+  #image_url: https://infmax.top/img/author.png
+  page: true
+  socials:
+    github: bigbigxu

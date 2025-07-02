@@ -1,0 +1,96 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* 改为绿色主题，与首页保持一致 */
+  --ifm-color-primary: #22c55e;
+  --ifm-color-primary-dark: #16a34a;
+  --ifm-color-primary-darker: #15803d;
+  --ifm-color-primary-darkest: #14532d;
+  --ifm-color-primary-light: #4ade80;
+  --ifm-color-primary-lighter: #86efac;
+  --ifm-color-primary-lightest: #bbf7d0;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* 日间模式下的导航栏 */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-color: #0a0f0a;
+  --ifm-navbar-link-hover-color: #22c55e;
+  
+  /* 日间模式下的页脚 - 使用稍微深一点的背景色 */
+  --ifm-footer-background-color: #f5f5f5;
+  --ifm-footer-color: #0a0f0a;
+  --ifm-footer-link-color: #16a34a;
+  --ifm-footer-link-hover-color: #22c55e;
+  --ifm-footer-title-color: #0a0f0a;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4ade80;
+  --ifm-color-primary-dark: #22c55e;
+  --ifm-color-primary-darker: #16a34a;
+  --ifm-color-primary-darkest: #15803d;
+  --ifm-color-primary-light: #86efac;
+  --ifm-color-primary-lighter: #bbf7d0;
+  --ifm-color-primary-lightest: #dcfce7;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* 暗色模式下的导航栏和页脚 */
+  --ifm-navbar-background-color: #0a0f0a;
+  --ifm-navbar-link-color: #f0f9f0;
+  --ifm-navbar-link-hover-color: #4ade80;
+  
+  --ifm-footer-background-color: #0a0f0a;
+  --ifm-footer-color: #f0f9f0;
+  --ifm-footer-link-color: #86efac;
+  --ifm-footer-link-hover-color: #4ade80;
+  --ifm-footer-title-color: #f0f9f0;
+}
+
+/* 导航栏样式 - 适用于所有模式 */
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+}
+
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar__link:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+/* 页脚样式 - 适用于所有模式 */
+.footer,
+.footer--dark,
+footer[class*="footer"],
+.footer__bottom {
+  background-color: var(--ifm-footer-background-color);
+}
+
+.footer__title {
+  color: var(--ifm-footer-title-color);
+}
+
+.footer__item {
+  color: var(--ifm-footer-color);
+}
+
+.footer__link-item {
+  color: var(--ifm-footer-link-color);
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-footer-link-hover-color);
+}
+
+.footer__copyright {
+  color: var(--ifm-footer-color);
+  opacity: 0.8;
+}
