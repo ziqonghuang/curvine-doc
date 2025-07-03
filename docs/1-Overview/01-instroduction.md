@@ -24,6 +24,8 @@ Curvine provides rich APIs suitable for various forms of data management, analys
 
 ## Use Cases
 
+![curvine-scene](./img/curvine-scene.jpg)
+
 Curvine is designed for high-performance, high-concurrency, and massive data caching scenarios:
 
 - **Deep Learning Training**: Provides high-speed data access for deep learning training, significantly reducing data loading time, improving GPU utilization, and accelerating model training processes
@@ -31,3 +33,4 @@ Curvine is designed for high-performance, high-concurrency, and massive data cac
 - **Analytical Databases and OLAP Engines**: Provides high-speed caching for analytical databases and OLAP engines, significantly improving complex query performance and reducing data analysis time
 - **Big Data Computing**: Provides high-speed caching for big data computing scenarios, reducing data read/write time
 - **Shuffle Data Storage**: Stores intermediate results (shuffle) during big data computation, achieving complete separation of compute and storage
+- **Multi-cloud Data Caching**: Improves data access efficiency across clouds and regions
