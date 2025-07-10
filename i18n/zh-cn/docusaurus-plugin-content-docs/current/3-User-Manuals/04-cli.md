@@ -24,7 +24,7 @@ Options:
 
 ### 1. Report子命令
 
-使用`cv report` 子命令来查看集群状态.
+使用`cv report` 子命令来查看集群状态， `cv report -h` 查看可用参数。
 
 | 命令格式                       | 功能描述                             |
 |----------------------------|------------------------------------|
@@ -49,7 +49,7 @@ Options:
 | bin/cv fs df | 文件系统可用空间 |
 | bin/cv fs du /path | 统计目录占用空间大小 |
 
-## 3. `mount` 子命令
+### 3. `mount` 子命令
 使用`cv mount` 子命令来挂载底层存储到Curvine上.  目前支持 `s3`协议。
 
 示例：将 `s3://testing` 挂载到 `/s3-testing`
@@ -76,7 +76,7 @@ bin/cv mount-list
 bin/cv umount /s3-testing/
 ```
 
-## 4. `load` 子命令
+### 4. `load` 子命令
 使用`cv load` 子命令来加载UFS数据到Curvine.
 
 :::warning
@@ -92,7 +92,7 @@ bin/curvine load s3://my-bucket/test.data
 bin/cv load-status $jobid
 ```
 
-# hdfs兼容的命令行(deprecated)
+## hdfs兼容的命令行(deprecated)
 Curvine 兼容hdfs访问协议，通过命令`bin/curvine fs`执行`hdfs fs`命令语法完全兼容的操作，如下示例：
 
 示例：
@@ -123,7 +123,6 @@ bin/curvine fs -mkdir -p /dir/a
 :::tip
 不在列表中的命令不代表不支持，而是未经过完整测试。 `curvine` 命令行工具依赖jvm环境，推荐您使用`cv` 原生命令。 如果有常见命令需求，欢迎提交Issue.
 :::
-
 
 ## POSIX令行
 Curvine 实现了符合 POSIX 标准的 FUSE(Filesystem in Userspace) 文件系统接口，

@@ -25,7 +25,7 @@ Options:
 
 ### 1. `report` Subcommand
 
-Use `cv report` subcommand to view cluster status.
+Use `cv report` subcommand to view cluster status, `cv report -h` to view available parameters.
 
 | Command Format                 | Description                                    |
 |-------------------------------|------------------------------------------------|
@@ -50,7 +50,7 @@ Use `cv fs` subcommand to execute hdfs commands. The `fs` subcommand provides ma
 | bin/cv fs df | File system available space |
 | bin/cv fs du /path | Calculate directory space usage |
 
-## 3. `mount` Subcommand
+### 3. `mount` Subcommand
 Use `cv mount` subcommand to mount underlying storage to Curvine. Currently supports `s3` protocol.
 
 Example: Mount `s3://testing` to `/s3-testing`
@@ -77,7 +77,7 @@ Unmount underlying storage:
 bin/cv umount /s3-testing/
 ```
 
-## 4. load Subcommand
+### 4. load Subcommand
 Use `cv load` subcommand to load UFS data into Curvine.
 
 :::warning
@@ -93,7 +93,7 @@ When successful, the load command output will show jobid. You can use $jobid to 
 bin/cv load-status $jobid
 ```
 
-# HDFS-Compatible Commands (deprecated)
+## HDFS-Compatible Commands (deprecated)
 
 Curvine is compatible with the HDFS access protocol. You can execute operations that are fully compatible with the `hdfs fs` command syntax through the `bin/curvine fs` command, as shown in the following examples:
 
