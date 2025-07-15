@@ -1,3 +1,8 @@
+---
+authors: [david]
+tags: [teams]
+---
+
 # Curvine: High-Performance Distributed Cache(Now Open Source)
 
 ## What is Curvine
@@ -12,7 +17,7 @@
 &emsp;In practical applications, what scenarios are suitable for Curvine acceleration?
 
 <div style={{ textAlign: 'center' }}>
-  <img src={require("/blog/curvine-blog/Curvine-application.png").default} alt="Curvine Application Scenarios." style={{ width: '80%', maxWidth: '800px' }}></img>
+  <img src={require("./Curvine-application.png").default} alt="Curvine Application Scenarios." style={{ width: '80%', maxWidth: '800px' }}></img>
   <p style={{ fontSize: '0.8em', color: '#666', marginTop: '8px' }}>
     <b>Fig. 1</b>：Curvine Application Scenarios.
   </p>
@@ -202,7 +207,7 @@
  &emsp; Curvine's architectural design philosophy: Simplicity, Excellence, and Universality.
 
 <div style={{ textAlign: 'center' }}>
-  <img src={require("/blog/curvine-blog/Curvine-architechure.png").default} alt="Curvine Architecture Diagram." style={{ width: '80%', maxWidth: '800px' }}></img>
+  <img src={require("./Curvine-architechure.png").default} alt="Curvine Architecture Diagram." style={{ width: '80%', maxWidth: '800px' }}></img>
   <p style={{ fontSize: '0.8em', color: '#666', marginTop: '8px' }}>
     <b>Fig. 2</b>：Curvine Application Scenarios.
   </p>
