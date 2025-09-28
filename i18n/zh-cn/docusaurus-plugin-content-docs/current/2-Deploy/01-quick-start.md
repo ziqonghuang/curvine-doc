@@ -5,6 +5,41 @@ sidebar_position: 0
 # 快速开始
 本章节将介绍如何快速启动curvine集群，并且进行读写数据测试。
 
+## 下载Release binary包
+下载预编译好的curvine包，参见 https://github.com/CurvineIO/curvine/releases， 目前仅提供基于rocky9的x86环境， 其他环境需要自行编译，参考[下载和编译curvine](#下载和编译curvine)
+
+解压后的目录结构如下
+```
+.
+├── bin
+├── build-version
+├── conf
+├── lib
+└── webui
+```
+
+
+执行 
+```
+export CURVINE_MASTER_HOSTNAME=localhost # 也可以设置为ip。
+./bin/restart-all.sh
+````
+
+便可以在单机上启动所有的服务，包括
+- curvine-master
+- curvine-worker
+- curvine-fuse
+- webui
+
+:::warning
+`CURVINE_MASTER_HOSTNAME` 在单机环境下设置为`localhost`，正式部署生产需要获取本机的hostname，相关配置在conf/curvine-env.sh中。
+
+如果您是在k8s等容器环境下设置，请一定要确认容器的hostname是可解析或者可访问的
+:::
+
+默认fuse挂载在`/curvine-fuse` 路径下,  服务状态监测可以参考[启动本地集群](#启动本地集群)
+
+
 ## 下载和编译curvine
 
 **支持的linux发行版**
@@ -41,40 +76,44 @@ make all
 :::note
 更多make支持的参数，可以敲击`make` 或者 `make help`查看， 如下
 ```bash
-Curvine Build System - Available Commands:
-
 Environment:
   make check-env                   - Check build environment dependencies
 
 Building:
-  make build [MODE=debug|release]  - Check environment, format and build the entire project (default: release)
+  make build ARGS='<args>'         - Build with specific arguments passed to build.sh
   make all                         - Same as 'make build'
   make format                      - Format code using pre-commit hooks
-
-Individual Components:
-  make fuse [MODE=debug|release]   - Build curvine-fuse component only
-  make server [MODE=debug|release] - Build curvine-server component only
-  make cli [MODE=debug|release]    - Build curvine-cli component only
-  make ufs [MODE=debug|release]    - Build curvine-ufs component only
 
 Docker:
   make docker-build                - Build using Docker compilation image
   make docker-build-cached         - Build using cached Docker compilation image
   make docker-build-img            - Build compilation Docker image (interactive)
 
+CSI (Container Storage Interface):
+  make csi-build                   - Build curvine-csi Go binary
+  make csi-run                     - Run curvine-csi from source
+  make csi-docker-build            - Build curvine-csi Docker image
+  make csi-docker-push             - Push curvine-csi Docker image
+  make csi-docker                  - Build and push curvine-csi Docker image
+  make csi-docker-fast             - Build curvine-csi Docker image quickly (no push)
+  make csi-fmt                     - Format curvine-csi Go code
+  make csi-vet                     - Run go vet on curvine-csi code
+
 Other:
   make cargo ARGS='<args>'         - Run arbitrary cargo commands
   make help                        - Show this help message
 
 Parameters:
-  MODE=debug     - Build in debug mode (default, faster compilation)
-  MODE=release   - Build in release mode (optimized, slower compilation)
+  ARGS='<args>'  - Additional arguments to pass to build.sh
 
 Examples:
-  make build                       - Build entire project in debug mode
-  make build MODE=release          - Build entire project in release mode
-  make server MODE=release         - Build only server component in release mode
-  make cargo ARGS='test --verbose' - Run cargo test with verbose output
+  make build                                  - Build entire project in release mode
+  make build ARGS='-d'                       - Build entire project in debug mode
+  make build ARGS='-p server -p client'       - Build only server and client components
+  make build ARGS='-p object'                  - Build S3 object gateway
+  make build ARGS='--package core --ufs s3'   - Build core packages with S3 native SDK
+  make cargo ARGS='test --verbose'            - Run cargo test with verbose output
+  make csi-docker-fast                        - Build curvine-csi Docker image quickly
 ```
 :::
 
@@ -87,10 +126,7 @@ Examples:
 
 
 #### 1.使用curvine提供的编译镜像
-curinve在dockerhub上提供了 基于`rock9` 的编译镜像
-
-- `curvine/curvine-compile:latest` 最小化镜像，仅包含编译的各种依赖包
-- `curvine/curvine-compile:build-cached` 缓存了项目的各类crates依赖包
+curinve在dockerhub上提供了 基于`rocky9` 的编译镜像 `curvine/curvine-compile:latest`
 
 :::tip
 推荐使用curvine-compile镜像作为一个沙箱开发环境， 编译和运行都在docker容器中运行。
@@ -99,9 +135,6 @@ curinve在dockerhub上提供了 基于`rock9` 的编译镜像
 快速尝鲜，您只需执行
 ```bash
 make docker-build 
-
-#or 使用带cache的镜像编译，更快速
-make docker-build-cached
 ```
 
 **常驻开发容器**
