@@ -141,17 +141,7 @@ Curvine's automatic caching system has significant advantages over traditional s
 
 #### ✨ Curvine Intelligent Cache Architecture
 
-```mermaid
-graph TB
-    A[Access Request] --> C{Cache Status Check}
-    C -->|Hit| D[Read Cache Directly]
-    C -->|Miss| K{Async Load}
-    K -->|AsyncLoad| E[Submit Load File Task]
-    K -->|Read| L[Read UFS Directly]
-    E --> F[Distributed Task Scheduling]
-    F --> G[Consistency & Integrity & Uniqueness Check]
-    G --> J[Cache Data]
-```
+![curvine](./curvine.png)
 
 #### Core Advantage Comparison
 
@@ -485,25 +475,7 @@ Simply replace the S3FileSystem implementation class in Hadoop configuration:
 
 #### 🔧 Working Principle
 
-```mermaid
-sequenceDiagram
-    participant App as Java Application
-    participant Proxy as S3AProxyFileSystem
-    participant Curvine as Curvine Cluster
-    participant S3 as Native S3
-
-    App->>Proxy: Open file(s3a://bucket/data/file.parquet)
-    Proxy->>Curvine: Query path mount status
-    alt Path is mounted
-        Curvine-->>Proxy: Return cv://path
-        Proxy->>Curvine: Access with cache
-        Curvine-->>App: Return data at high speed
-    else Path is not mounted
-        Curvine-->>Proxy: Path not mounted
-        Proxy->>S3: Use native S3 access
-        S3-->>App: Return data
-    end
-```
+![Working Principle](./WorkingPrinciple.png)
 
 #### 🚀 Usage Example
 
